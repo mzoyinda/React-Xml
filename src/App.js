@@ -1,25 +1,82 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+//axios for xml request
+import axios from 'axios';
+
+//xml file reader
+import XMLParser from 'react-xml-parser';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+      this.state = {
+     
+        name: [],
+        food:[],
+      
+              }
+             
+  }
+  
+    componentDidMount() {
+     //get data request
+      axios.get('/assets/users.xml',{
+        "Content-Type": "application/xml; charset=utf-8"
+       }).then(res => 
+        {
+        //Storing users detail in state array object
+        const jsonDataFromXml = new XMLParser().parseFromString(res.data);
+        
+      
+        this.setState({ name: jsonDataFromXml.getElementsByTagName('title') })
+     
+       
+       
+       }); 
+       axios.get('/assets/food.xml',{
+        "Content-Type": "application/xml; charset=utf-8"
+       }).then(res => 
+        {
+        //Storing users detail in state array object
+        const jsonDataFromXml = new XMLParser().parseFromString(res.data);
+        
+      
+        this.setState({ food: jsonDataFromXml.getElementsByTagName('name') })
+     
+       
+       
+           }); 
+    }
+  
+ 
+  render() {
+  
+    return (
+    
+      <div className="container p-5">
+       
+        <ul class="list-group">
+      
+        {(
+      this.state.name.map((item, index) => {
+        return (
+          <li class="list-group-item">{item.value}</li>
+        )
+        }
+            ))}
+          {(
+      this.state.food.map((item, index) => {
+        return (
+          <li class="list-group-item">{item.value}</li>
+        )
+        }
+      ))}
+    
+    </ul>
     </div>
-  );
+     
+)
+};
 }
 
 export default App;

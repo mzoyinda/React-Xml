@@ -1,0 +1,31 @@
+ <?xml version="1.0" encoding="UTF-8"?>    
+
+ 
+<CookBook>
+    <Recipe class="Cake">
+        <IngredientList>
+            <Ingredient>Flour</Ingredient>
+            <Ingredient>Eggs</Ingredient>
+            <Ingredient>Sugar</Ingredient>
+        </IngredientList>
+        <Cooking_Means>
+            <Name>Baking<Name>
+            <Heat>350 Fahrenheit<Heat> 
+            <TimeInOven>20 minutes</TimeInOven>
+        </Cooking_Means> 
+        
+    </Recipe>
+
+    <Recipe class="Noodles"> 
+        <IngredientList>
+            <Ingredient>Ramen</Ingredient>
+            <Ingredient>Eggs</Ingredient>
+            <Ingredient>Spices</Ingredient>
+        </IngredientList>
+        <Cooking_Means>
+            <Name>Boiling<Name>
+            <Heat>212 Fahrenheit<Heat>
+            <TimeInOven>10 minutes</TimeInOven> 
+        </Cooking_Means>
+    </Recipe>
+</CookBook>
