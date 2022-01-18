@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dish>
+    <Food>
+
+        <attr>Food Name</attr>
+        <property>Pasta</property>
+
+    </Food>
+    <Food>
+
+        <attr>Price</attr>
+        <property>NGN 2,500</property>
+
+    </Food>
+    <Food>
+
+        <attr>Size</attr>
+        <property>1.5L</property>
+
+    </Food>
+    <Food>
+
+        <attr>Toppings</attr>
+        <property>Extra cheese or Meatballs</property>
+
+    </Food>
+    <Food>
+
+        <attr>Vegan Option</attr>
+        <property>Yes</property>
+
+    </Food>
+</Dish>
